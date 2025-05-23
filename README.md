@@ -20,11 +20,14 @@ Para reparar los errores de este diagrama se necesitaría el uso correcto de las
 
 - Redundancia de clases: las clases "SistemaReserva" y "Usuario" tienen metodos bastante similares en cuanto a superficialidad se refiere, volviendo a una de estas 2 clases inútiles.
 - Falta de notaciónes en las interacciones del sistema: dentro del diagrama se especifíca como interactuan las clases a través de las flechas utilizadas, pero no se especifica exactamente que acción realizan dentro de este mismo, por ejemplo, la única instancia de esto viene siento la relación simple "reserva" entre "Usuario" y "Sala".
-- 
+- Falta de relación en la clase "Reserva": según el diagrama indíca, la clase "Reserva" no se relaciona con absolutamente ninguna clase, puede ser que sea el caso, pero... Una clase llamada "Reserva" que no es utilizada en un sistema de reservas?
 
+### Soluciones:
+
+Para solucionar los errores de este diagrama se puede tomar el siguiente curso de accion: Reimplementar la clase Sistema de Reserva y Usuario para juntarlas y crear Usuario como una clase que sirva para implementar Deep Copy con Prototype para el registro de usuarios en una base de datos del sistema, de esta manera se mantienen ambas clases pero se elimina la redundancia junto con una ampliación del sistema que lo vuelve mucho más robusto. Las falta en la notación de las interacciones se puede resolver con simplemente, no se, indicarlas quizá?. Por ultimo, la falta de relación en la clase "Reserva" puede ser resuelta de plano con relacionarla al sistema de reservas como una plantilla usando Deep Copy a la hora de crear cada reserva nueva en el sistema.
+ 
 ## Diagrama de Sistema
 ### Errores identificados:
 -
-
 -
 -
